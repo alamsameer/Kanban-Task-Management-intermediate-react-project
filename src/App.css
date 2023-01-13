@@ -1,0 +1,113 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.App main{
+  flex: 1;
+  min-height: calc(100vh - 99px);
+  height: 100%;
+}
+.dark{
+  color: white;
+  background-color:rgb(24, 24, 40) ;
+}
+.light{
+  color: rgb(24, 24, 40);
+  background-color: white;
+}
+.App main{
+  display: flex;
+}
+.field{
+  font-size: 12px;
+  font-weight: 600;
+  padding-bottom: 1rem;
+}
+select{
+  border: none;
+  width: 80%;
+  background: none;
+}
+select:focus {
+  outline: none;
+}
+.form input{
+  padding: .5rem;
+  width: 90%;
+  margin: 15px 0;
+  border: 1px solid rgb(159, 143, 143);
+}
+.form input:hover{
+  border-color: rgb(97, 4, 226);
+}
+textarea{
+  width: 90%;
+}
+.form{
+  position: relative;
+font-family: monospace;
+/* width: 100%; */
+}
+
+.form label{
+  /* display: inline-block; */
+  margin-bottom: .8rem;
+}
+.label-block{
+  display: block;
+  margin-bottom: .8rem;
+  font-size: 1.1rem;
+  /* font-weight: 600; */
+}
+.rm-btn{
+  border: none;
+  background: none;
+  color: #aaaaaa;
+  font-size: 18px;
+  margin-left: 10px;
+  font-weight: bold;
+ 
+}
+::-webkit-input-placeholder { /* Edge */
+ font-size: 12px;
+ font-family: monospace;
+}
+
+:-ms-input-placeholder { /* Internet Explorer */
+  font-size: 12px;
+  font-family: monospace;
+}
+
+::placeholder {
+  font-size: 12px;
+  font-family: monospace;
+}
+.btn{
+  font-family: monospace;
+  padding: .6rem ;
+  display: block;
+  margin: 15px 0;
+  border: none;
+  border-radius: 20px;
+  background-color:rgb(97, 4, 226) ;
+  width: 100%;
+  text-align: center;
+}
+select{
+  margin: 10px 0;
+}
+.text-light{
+  
+  color: black;
+}
+.text-dark{
+  color: white;
+}

@@ -1,0 +1,383 @@
+{
+    "boards": [
+        {
+            "id": 1,
+            "title": "Board 1",
+            "columns": [
+                {
+                    "id": 1,
+                    "title": "todo",
+                    "description":"",
+                    "tasks": [
+                        {
+                            "id": 1,
+                            "title": "Task 1 b1",
+                            "status": "todo",
+                            "subtasks": [
+                                {
+                                    "id": 1,
+                                    "title": "Subtask 1",
+                                    "isCompleted":true
+                                },
+                                {
+                                    "id": 2,
+                                    "title": "Subtask 2",
+                                    "isCompleted":true
+                                }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "title": "Task 2 b1",
+                            "status": "todo",
+                            "subtasks": [
+                                {
+                                    "id": 3,
+                                    "title": "Subtask 3",
+                                    "isCompleted":true
+                                },
+                                {
+                                    "id": 4,
+                                    "title": "Subtask 4",
+                                    "isCompleted":true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "title": "doing",
+                    "tasks": [
+                        {
+                            "id": 3,
+                            "title": "Task 3 b2",
+                            "status": "doing",
+                            "subtasks": [
+                                {
+                                    "id": 5,
+                                    "title": "Subtask 5",
+                                    "isCompleted":false
+                                },
+                                {
+                                    "id": 6,
+                                    "title": "Subtask 6",
+                                    "isCompleted":true
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "title": "Task 4 b2",
+                            "status": "doing",
+                            "subtasks": [
+                                {
+                                    "id": 7,
+                                    "title": "Subtask 7",
+                                    "isCompleted":false
+                                },
+                                {
+                                    "id": 8,
+                                    "title": "Subtask 8",
+                                    "isCompleted":true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "title": "done",
+                    "tasks": [
+                        {
+                            "id": 5,
+                            "title": "Task 5 b3 ",
+                            "status": "done",
+                            "subtasks": [
+                                {
+                                    "id": 9,
+                                    "title": "Subtask 9",
+                                    "isCompleted":true
+                                },
+                                {
+                                    "id": 10,
+                                    "title": "Subtask 10",
+                                    "isCompleted":false
+                                }
+                            ]
+                        },
+                        {
+                            "id": 6,
+                            "title": "Task 6 b3",
+                            "status": "done",
+                            "subtasks": [
+                                {
+                                    "id": 11,
+                                    "title": "Subtask 11",
+                                    "isCompleted":true
+                                },
+                                {
+                                    "id": 12,
+                                    "title": "Subtask 12",
+                                    "isCompleted":false
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "title": "Board 2",
+            "columns": [
+                {
+                    "id": 1,
+                    "title": "todo",
+                    "tasks": [
+                        {
+                            "id": 1,
+                            "title": "Task 1",
+                            "status": "todo",
+                            "subtasks": [
+                                {
+                                    "id": 1,
+                                    "title": "Subtask 1",
+                                    "isCompleted":true
+                                },
+                                {
+                                    "id": 2,
+                                    "title": "Subtask 2",
+                                    "isCompleted":true
+                                }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "title": "Task 2",
+                            "status":"todo",
+                            "subtasks": [
+                                {
+                                    "id": 3,
+                                    "title": "Subtask 3",
+                                    "isCompleted":true
+                                },
+                                {
+                                    "id": 4,
+                                    "title": "Subtask 4",
+                                    "isCompleted":true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "title": "doing",
+                    "tasks": [
+                        {
+                            "id": 3,
+                            "title": "Task 3",
+                            "status":  "doing",
+                            "subtasks": [
+                                {
+                                    "id": 5,
+                                    "title": "Subtask 5",
+                                    "isCompleted":false
+                                },
+                                {
+                                    "id": 6,
+                                    "title": "Subtask 6",
+                                    "isCompleted":true
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "title": "Task 4",
+                            "status":  "doing",
+                            "subtasks": [
+                                {
+                                    "id": 7,
+                                    "title": "Subtask 7",
+                                    "isCompleted":false
+                                },
+                                {
+                                    "id": 8,
+                                    "title": "Subtask 8",
+                                    "isCompleted":true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "title": "done",
+                    "tasks": [
+                        {
+                            "id": 5,
+                            "title": "Task 5",
+                            "status":"done",
+                            "subtasks": [
+                                {
+                                    "id": 9,
+                                    "title": "Subtask 9",
+                                    "isCompleted":false
+                                },
+                                {
+                                    "id": 10,
+                                    "title": "Subtask 10",
+                                    "isCompleted":false
+                                }
+                            ]
+                        },
+                        {
+                            "id": 6,
+                            "title": "Task 6",
+                            "status": "done",
+                            "subtasks": [
+                                {
+                                    "id": 11,
+                                    "title": "Subtask 11",
+                                    "isCompleted":true
+                                },
+                                {
+                                    "id": 12,
+                                    "title": "Subtask 12",
+                                    "isCompleted":false
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "title": "Board 3",
+            "columns": [
+                {
+                    "id": 1,
+                    "title": "todo",
+                    "tasks": [
+                        {
+                            "id": 1,
+                            "title": "Task 1",
+                            "status": "todo",
+                            "subtasks": [
+                                {
+                                    "id": 1,
+                                    "title": "Subtask 1",
+                                    "isCompleted":true
+                                },
+                                {
+                                    "id": 2,
+                                    "title": "Subtask 2",
+                                    "isCompleted":true
+                                }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "title": "Task 2",
+                            "status": "todo",
+                            "subtasks": [
+                                {
+                                    "id": 3,
+                                    "title": "Subtask 3",
+                                    "isCompleted":true
+                                },
+                                {
+                                    "id": 4,
+                                    "title": "Subtask 4",
+                                    "isCompleted":true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "title": "doing",
+                    "tasks": [
+                        {
+                            "id": 3,
+                            "title": "Task 3",
+                            "status": "doing",
+                            "subtasks": [
+                                {
+                                    "id": 5,
+                                    "title": "Subtask 5",
+                                    "isCompleted":false
+                                },
+                                {
+                                    "id": 6,
+                                    "title": "Subtask 6",
+                                    "isCompleted":true
+                                }
+                            ]
+                        },
+                        {
+                            "id": 4,
+                            "title": "Task 4",
+                            "status": "doing",
+                            "subtasks": [
+                                {
+                                    "id": 7,
+                                    "title": "Subtask 7",
+                                    "isCompleted":false
+                                },
+                                {
+                                    "id": 8,
+                                    "title": "Subtask 8",
+                                    "isCompleted":true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "title": "done",
+                    "tasks": [
+                        {
+                            "id": 5,
+                            "title": "Task 5",
+                            "status": "done",
+                            "subtasks": [
+                                {
+                                    "id": 9,
+                                    "title": "Subtask 9",
+                                    "isCompleted":true
+                                },
+                                {
+                                    "id": 10,
+                                    "title": "Subtask 10",
+                                    "isCompleted":true
+                                }
+                            ]
+                        },
+                        {
+                            "id": 6,
+                            "title": "Task 6",
+                            "status": "done",
+                            "subtasks": [
+                                {
+                                    "id": 11,
+                                    "title": "Subtask 11",
+                                    "isCompleted":true
+                                },
+                                {
+                                    "id": 12,
+                                    "title": "Subtask 12",
+                                    "isCompleted":false
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

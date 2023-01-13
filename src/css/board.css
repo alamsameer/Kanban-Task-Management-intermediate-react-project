@@ -1,0 +1,29 @@
+.sidebar-board{
+margin-bottom: 1rem;
+padding: .5rem 1rem;
+border-radius: 0 20px 20px  0;
+font-size: 18px;
+font-weight: 600;
+font-family: monospace;
+}
+.sidebar-board:hover{
+background-color: rgb(97, 4, 226);
+color: white;
+}
+.board-light{
+color:rgb(24, 24, 40) ;
+background-color: white;
+/* padding: .5rem; */
+}
+
+.board-dark{
+color: white;
+background-color:rgb(24, 24, 40)  ;
+}
+.active-light{
+background-color: rgb(219, 218, 240);
+}
+.active-dark{
+    background-color: rgb(38, 37, 70);
+}
+

@@ -1,0 +1,81 @@
+.modal {
+    /* display: none; Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    /* background-color: #fefefe; */
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    position: relative;
+    max-width: 450px;
+    /* display: flex; */
+    /* flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    /* outline: 2px solid rgb(18, 45, 18); */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 20px;
+    margin-left: 10px;
+    font-weight: bold;
+    /* outline: 2px solid green; */
+    transition: all;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: rgb(97, 4, 226) ;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 25px;
+  }
+  .modal-sidebar{
+    min-width: 350px;
+    position: absolute;
+    z-index: 9999;
+    top: 110%;
+    padding: .8rem 0;
+  }
+  .modal-sidebar article {
+/* display: flex; */
+  }
+  .modal-sidebar-btn{
+display: block;
+position: relative;
+padding: .5rem .7rem;
+font-size: 1.1rem;
+font-weight: 600;
+font-family: monospace;
+margin: 5px 10px 15px 0;
+border-radius: 0 20px 20px 0;
+
+  }
+  .modal-sidebar-btn:hover{
+    background-color:rgb(97, 4, 226) ;
+  }
+  .modal-sidebar-footer{
+display: block;
+position: relative;
+  }
+  .modal-sidebar-footer button{
+    position: relative;
+  }

@@ -1,0 +1,156 @@
+.sidebar {
+    display: block;
+    min-width: 16rem;
+    height: 100%;
+}
+
+/* .sidebar-header {
+    font-size: 2.3rem;
+    padding: 1rem;
+    font-weight: 900;
+    font-family: monospace;
+} */
+
+.sidebar-light {
+    color: black;
+    background-color: white;
+}
+
+.sidebar-dark {
+    color: white;
+    background-color: rgb(24, 24, 40);
+}
+
+.sidebar-control {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    bottom: 0;
+    left: 0;
+    margin: .5rem 1rem 1rem 0;
+    padding: .6rem 1rem;
+    border-radius: 0 20px 20px 0;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: monospace;
+    color: white;
+    border: none;
+    background-color: rgb(97, 4, 226);
+}
+.dow{
+    z-index: -1;
+}
+.sidebar-boards {
+    position: relative;
+    height: calc(100vh - 99px);
+    z-index: 1000;
+    height: 100%;
+    /* transform: translateX(-100%); */
+    /* display: none; */
+}
+
+.sidebar-hide {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    bottom: 0;
+    margin: .5rem 1rem 1rem 0;
+    padding: .5rem 1rem;
+    border-radius: 0 20px 20px 0;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: monospace;
+    border: none;
+}
+
+.sidebar-hide:hover {
+    color: white;
+    background-color: rgb(97, 4, 226);
+}
+
+.sidebar-toggle {
+    left: -100%;
+    position: absolute;
+}
+.up{
+    z-index: 1000;
+}
+.down{
+    z-index: -999;
+}
+/* .sidebar-footer{
+    position: absolute;
+    background-color: blueviolet;
+} */
+.theme-changer {
+    /* display: none; */
+    position: absolute;
+    display: flex;
+    bottom: 15%;
+    padding: .4rem;
+    margin: 0 1rem 0 1rem;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    border-radius: .5rem;
+
+}
+
+.theme-changer-dark {
+    background-color: rgb(2, 2, 18);
+}
+
+.theme-changer-light {
+    background-color: beige;
+}
+
+.theme-changer>button {
+    position: relative;
+    min-width: 3rem;
+    min-height: 2rem;
+    padding: .5rem;
+    border: none;
+    border-radius: 1rem;
+}
+
+.theme-toggler {
+    position: absolute;
+    color: rgb(255, 0, 157);
+    background-color: blue;
+    width: 1.3rem;
+    height: 1.3rem;
+    margin: 5px;
+    top: 1px;
+    border-radius: 100%;
+}
+
+.left {
+    left: 0;
+    transition: all 2s;
+}
+
+.right {
+    right: 0;
+}
+@media screen and (max-width:680px) {
+    .sidebar{
+        display: none;
+    }}
+@media screen and (max-width:320px) {
+    .sidebar{
+        display: none;
+    }
+    .sidebar-boards{
+        display: none;
+    }
+    .sidebar-hide{
+        display: none;
+    }
+    .sidebar-control{
+        display: none;
+    }
+}

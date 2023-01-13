@@ -1,0 +1,38 @@
+.showtask-container{
+    position: relative;
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    margin: 1.6rem;
+    /* outline: 2px solid green; */
+}
+.showtask-header{
+    /* outline: 2px solid rgb(19, 67, 19); */
+    display: flex;
+    justify-content: space-between;
+}
+.showtask-header:first-child{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.showtask-header>div{
+    display: flex;
+    gap: .5rem;
+}
+.showtask-header>div>button {
+    border:none ;
+    background: none;
+    font-size: .7rem;
+}
+.subtask-items{
+    list-style: none;
+}
+
+.subtask-items li:not(:first-child){
+    padding: .6rem 0 ;
+    font-weight: 600;
+    font-size: .9rem;
+    /* outline: 2px solid ; */
+}
+
