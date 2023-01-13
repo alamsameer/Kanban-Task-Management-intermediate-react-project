@@ -1,9 +1,11 @@
 import { useContext, useEffect, useState } from "react"
 import "../css/header.css"
 import TaskContex from "../context/Task"
+import logo from "../assets/logo-mobile.svg"
 // import { BiDotsVertical } 
 import {BiMessageSquareEdit} from "react-icons/bi"
 import {AiOutlineDelete} from "react-icons/ai"
+import {MdOutlineKeyboardArrowDown} from "react-icons/md"
 
 import ThemeContext from "../context/Theme"
 import SidebarModal from "./Modals/SidebarModal"
@@ -15,22 +17,21 @@ function Header({ index }) {
   const { theme } = useContext(ThemeContext)
   const {openAddTaskModal,openEditBoard}=useContext(TaskOperationContext)
   const [isSidebarmodal,setSidebarModal]=useState(false)
-  const [title,setTitle]=useState(state[activeIndex].title)
+  const title=state[activeIndex].title
   console.log(activeIndex);
   // console.log(state[activeIndex]);
   // const title = state[activeIndex].title
-  useEffect(()=>{
-    setTitle(state[activeIndex].title)
-  },[activeIndex])
+  
   const headerclass = "header " + `${theme}`
 
   return (
     <div className={headerclass}>
       <header className="header-logo">
-        Kanban
+        <img src={logo} alt="logo" style={{marginRight:"5px"}} />
+        <span>Kanban</span>
       </header> 
       {isSidebarmodal ?<SidebarModal setSidebarModal={setSidebarModal} />:''}
-      <div className="header-title">{title} <button className="header-gt" onClick={()=>{setSidebarModal(true)}}>&gt;</button></div>
+      <div className="header-title">{title} <button className="header-gt" onClick={()=>{setSidebarModal(true)}}><MdOutlineKeyboardArrowDown/></button></div>
       <div className="header-edit">
         <button className="add-task "  onClick={()=>{
           

@@ -12,6 +12,9 @@
     font-weight: 900;
     font-family: monospace;
 }
+.header-logo span{
+    display: inline-block;
+}
 .header-title {
     font-size: 2rem;
     font-weight: 600;
@@ -52,8 +55,11 @@
     font-size: 25px;
     color:rgb(97, 4, 226) ;
     visibility: hidden;
+    background: none;
+    border: none;
+    margin: auto;
 }
-@media screen and (max-width:620px) {
+@media screen and (max-width:720px) {
     .header-title {
         font-size: 1.6rem;
     }
@@ -68,7 +74,7 @@
         /* border: 2px solid green; */
         /* gap: 1rem; */
     }
-    .header-logo{
+    .header-logo span{
         display: none;
     }
     .header-gt{

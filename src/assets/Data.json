@@ -2,7 +2,7 @@
     "boards": [
         {
             "id": 1,
-            "title": "Board 1",
+            "title": "Platform Launch",
             "columns": [
                 {
                     "id": 1,
@@ -11,7 +11,7 @@
                     "tasks": [
                         {
                             "id": 1,
-                            "title": "Task 1 b1",
+                            "title": "Add account management endpoints",
                             "status": "todo",
                             "subtasks": [
                                 {
@@ -28,7 +28,7 @@
                         },
                         {
                             "id": 2,
-                            "title": "Task 2 b1",
+                            "title": "Research pricing points of various competitors and trial different business models",
                             "status": "todo",
                             "subtasks": [
                                 {
@@ -51,7 +51,7 @@
                     "tasks": [
                         {
                             "id": 3,
-                            "title": "Task 3 b2",
+                            "title": " Build UI for search",
                             "status": "doing",
                             "subtasks": [
                                 {
@@ -68,7 +68,7 @@
                         },
                         {
                             "id": 4,
-                            "title": "Task 4 b2",
+                            "title": "Design onboarding flow",
                             "status": "doing",
                             "subtasks": [
                                 {
@@ -91,7 +91,7 @@
                     "tasks": [
                         {
                             "id": 5,
-                            "title": "Task 5 b3 ",
+                            "title": " Add search enpoints ",
                             "status": "done",
                             "subtasks": [
                                 {
@@ -108,7 +108,7 @@
                         },
                         {
                             "id": 6,
-                            "title": "Task 6 b3",
+                            "title": "Add authentication endpoints",
                             "status": "done",
                             "subtasks": [
                                 {
@@ -129,7 +129,7 @@
         },
         {
             "id": 1,
-            "title": "Board 2",
+            "title": "Marketing Plan",
             "columns": [
                 {
                     "id": 1,
@@ -137,34 +137,34 @@
                     "tasks": [
                         {
                             "id": 1,
-                            "title": "Task 1",
+                            "title": "Plan Product Hunt launch",
                             "status": "todo",
                             "subtasks": [
                                 {
                                     "id": 1,
-                                    "title": "Subtask 1",
+                                    "title": "Find hunter",
                                     "isCompleted":true
                                 },
                                 {
                                     "id": 2,
-                                    "title": "Subtask 2",
+                                    "title": "Gather assets",
                                     "isCompleted":true
                                 }
                             ]
                         },
                         {
                             "id": 2,
-                            "title": "Task 2",
+                            "title": "Share on Show HN",
                             "status":"todo",
                             "subtasks": [
                                 {
                                     "id": 3,
-                                    "title": "Subtask 3",
+                                    "title": "Draft out HN post",
                                     "isCompleted":true
                                 },
                                 {
                                     "id": 4,
-                                    "title": "Subtask 4",
+                                    "title": "Get feedback and refine",
                                     "isCompleted":true
                                 }
                             ]
@@ -177,17 +177,17 @@
                     "tasks": [
                         {
                             "id": 3,
-                            "title": "Task 3",
+                            "title": "Write launch article to publish on multiple channels",
                             "status":  "doing",
                             "subtasks": [
                                 {
                                     "id": 5,
-                                    "title": "Subtask 5",
+                                    "title": "Write article",
                                     "isCompleted":false
                                 },
                                 {
                                     "id": 6,
-                                    "title": "Subtask 6",
+                                    "title": "Publish on LinkedIn",
                                     "isCompleted":true
                                 }
                             ]
@@ -255,7 +255,7 @@
         },
         {
             "id": 1,
-            "title": "Board 3",
+            "title": "RoadMap",
             "columns": [
                 {
                     "id": 1,
@@ -263,7 +263,7 @@
                     "tasks": [
                         {
                             "id": 1,
-                            "title": "Task 1",
+                            "title": "Launch version one",
                             "status": "todo",
                             "subtasks": [
                                 {
@@ -280,7 +280,7 @@
                         },
                         {
                             "id": 2,
-                            "title": "Task 2",
+                            "title": "Review early feedback and plan next steps for roadmap",
                             "status": "todo",
                             "subtasks": [
                                 {
