@@ -9,7 +9,7 @@ import {MdOutlineNightlight} from 'react-icons/md'
 import TaskOperationContext from "../context/TaskOperation"
  
 function SideBar() {
-  const { state, dispatch } = useContext(TaskContext)
+  const { activeIndex,state, dispatch } = useContext(TaskContext)
   const {openAddBoardModal}=useContext(TaskOperationContext)
   // const [isToggle, setToggle] =  useContext(TaskContext)
   const { theme, setTheme ,isToggle, setToggle} = useContext(ThemeContext)
@@ -28,34 +28,38 @@ function SideBar() {
 
   return (
     <div className={ParentclassName}>
- 
-      <div className={sidebarBoardClass} >
-        <article>
-          {
-            state.map((data,i) => {
-              const { title } = data
-              // console.log(title);
-              return <Board key={i} boardIndex={i} title={title} />
-            })
-          }
-          <div className="sidebar-board" onClick={()=>{openAddBoardModal()}}> + Add Board</div>
-        </article>
-        <footer className="sidebar-footer">
-          <div className={themeChangerClass}>
-
-              <span style={{position:"absolute",left:"20%"}}><HiOutlineLightBulb/></span>
-            <button onClick={changeTheme}>
-              <span className={togglerSideclass}></span>
-            </button>
-              <span style={{position:"absolute",right:"20%"}}><MdOutlineNightlight/></span>
-            <i></i>
-          </div>
-          <button className="sidebar-hide" onClick={() => setToggle(!isToggle)} > <AiOutlineEyeInvisible/> hide sidebar</button>
-        </footer>
-      </div>
-      <button className={sidebarcontrol} onClick={() => {
-        // console.log("i am clicked toggler");
-        setToggle(!isToggle)}}><AiOutlineEye /></button>
+      {
+        state.length<0 ?"":<>
+        
+        <div className={sidebarBoardClass} >
+          <article>
+            {
+              state.map((data,i) => {
+                const { title } = data
+                // console.log(title);
+                return <Board key={i} boardIndex={i} title={title} />
+              })
+            }
+            <div className="sidebar-board" onClick={()=>{openAddBoardModal()}}> + Add Board</div>
+          </article>
+          <footer className="sidebar-footer">
+            <div className={themeChangerClass}>
+  
+                <span style={{position:"absolute",left:"20%"}}><HiOutlineLightBulb/></span>
+              <button onClick={changeTheme}>
+                <span className={togglerSideclass}></span>
+              </button>
+                <span style={{position:"absolute",right:"20%"}}><MdOutlineNightlight/></span>
+              <i></i>
+            </div>
+            <button className="sidebar-hide" onClick={() => setToggle(!isToggle)} > <AiOutlineEyeInvisible/> hide sidebar</button>
+          </footer>
+        </div>
+        <button className={sidebarcontrol} onClick={() => {
+          // console.log("i am clicked toggler");
+          setToggle(!isToggle)}}><AiOutlineEye /></button>
+        </>
+      }
         {/* insert add board modal here  */}
     </div>
   )

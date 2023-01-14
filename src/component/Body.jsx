@@ -10,7 +10,7 @@ function Body() {
   const{theme}=useContext(ThemeContext)
   const {openEditBoard}=useContext(TaskOperationContext)
 
-  const bodycolumns=state[activeIndex].columns
+  const bodycolumns=activeIndex !==null ?state[activeIndex].columns:null
 
   const taskbodyclass='task-body taskbody-'+theme
   const newcolumnclass="newcolumn newcolumn-"+theme

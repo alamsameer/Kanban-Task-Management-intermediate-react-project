@@ -13,11 +13,12 @@ import SidebarModal from "./Modals/SidebarModal"
 import Modal from "./Modal"
 import TaskOperationContext from "../context/TaskOperation"
 function Header({ index }) {
-  const { state, dispatch, activeIndex } = useContext(TaskContex)
+  const { state, dispatch, activeIndex,setActiveIndex } = useContext(TaskContex)
   const { theme } = useContext(ThemeContext)
   const {openAddTaskModal,openEditBoard}=useContext(TaskOperationContext)
   const [isSidebarmodal,setSidebarModal]=useState(false)
-  const title=state[activeIndex].title
+  // console.log(activeIndex ==null,state[activeIndex].title,"in header");
+  // const title=activeIndex == null ?null:
   console.log(activeIndex);
   // console.log(state[activeIndex]);
   // const title = state[activeIndex].title
@@ -30,19 +31,32 @@ function Header({ index }) {
         <img src={logo} alt="logo" style={{marginRight:"5px"}} />
         <span>Kanban</span>
       </header> 
+      {
+        activeIndex == null?"":<>
+        
       {isSidebarmodal ?<SidebarModal setSidebarModal={setSidebarModal} />:''}
-      <div className="header-title">{title} <button className="header-gt" onClick={()=>{setSidebarModal(true)}}><MdOutlineKeyboardArrowDown/></button></div>
+      <div className="header-title">{state[activeIndex].title} <button className="header-gt"  onClick={()=>{setSidebarModal(true)}}><MdOutlineKeyboardArrowDown/></button></div>
+      
       <div className="header-edit">
         <button className="add-task "  onClick={()=>{
           
           openAddTaskModal()}}>Add task</button>
 
-        <button className=" btn edit" onClick={()=>{
+        <button className=" btn edit"   onClick={()=>{
           openEditBoard(state[activeIndex])}}><BiMessageSquareEdit/></button>
-        <button className=" btn delete" onClick={()=>{
-          dispatch({type:"deleteboard",index:activeIndex})
+        <button className=" btn delete"   onClick={()=>{
+          if (state.length>activeIndex){
+            console.log("i am dispatcher");
+            dispatch({type:"deleteboard",index:activeIndex})
+          }
+          else if(state.length-1<=activeIndex){
+            console.log("i am in lesser",activeIndex-1,activeIndex-1>=0?activeIndex-1:null);
+            setActiveIndex(activeIndex-1>=0?activeIndex-1:null)
+          }
           }}><AiOutlineDelete/></button>
       </div>
+        </>
+      }
       {/* insert add  task modal here  */}
     </div>
   )

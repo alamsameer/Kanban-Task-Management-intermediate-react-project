@@ -1,4 +1,4 @@
-import { useState, useReducer } from 'react'
+import { useState, useReducer, useEffect } from 'react'
 import './App.css'
 import data from "./assets/Data.json"
 import Body from "./component/Body"
@@ -92,15 +92,16 @@ const init = () => {
 function App() {
   const [state, dispatch] = useReducer(reducer, null, init)
   const [theme, setTheme] = useState('light');
-  const [activeIndex, setActiveIndex] = useState(1)
+  const [activeIndex, setActiveIndex] = useState(null)
   const [isToggle, setToggle] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [mode, setMode] = useState(null)
   const [taskToEdit, setTaskToEdit] = useState(null)
   const [taskToShow, setTaskToShow] = useState(null)
   const [boardToEdit, setBoardToEdit] = useState(null)
-  // console.log("inside json", state);
-
+  console.log("in appjsx",activeIndex);
+  let lenState=state.length
+  console.log("in app fo state",lenState);
   //  for adding task to the list 
   function openAddTaskModal() {
     console.log("i add task clicked");
@@ -133,7 +134,11 @@ function App() {
     setMode(null)
     setTaskToEdit(null)
   }
+  useEffect(()=>{
+    // setActiveIndex(()=>lenState<=0?null:0)
+  },[])
   console.log(isModalOpen, mode);
+  console.log(activeIndex != null,"in apr");
   return (
     <TaskOperationContext.Provider value={{ openAddTaskModal, openEditTaskModal, openAddBoardModal, openShowTaskModal,openEditBoard, closeModal }}>
       <TaskTheme.Provider value={{ state, dispatch, setActiveIndex, activeIndex }} >
