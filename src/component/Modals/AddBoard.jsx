@@ -19,7 +19,7 @@ function AddBoard() {
         }
         return col
       })
-      console.log(newColumn);
+      // console.log(newColumn);
       // newColumn[i].title = value
       setInputs(values=>({...values,columns:newColumn}))
     }
@@ -40,13 +40,13 @@ function AddBoard() {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(inputs);
+    // console.log(inputs);
     dispatch({type:"addboard",payload:inputs})
     closeModal()
   }
   const btnClass='btn text-'+theme
   const formClass='form '+theme
-  console.log(inputs);
+  // console.log(inputs);
   return (
     <form onSubmit={handleSubmit} className={formClass}>
       <h2>Add New Board</h2>

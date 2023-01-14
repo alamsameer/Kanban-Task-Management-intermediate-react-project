@@ -6,7 +6,6 @@ import {MdOutlineDashboard} from 'react-icons/md'
 function Board(props) {
   const { theme, setTheme } = useContext(ThemeContext)
   const {state,setActiveIndex,activeIndex }=useContext(TaskContex)
-  // console.log(boardIndex);
     const currentActive=()=>{
       setActiveIndex(props.boardIndex)
       if(props.setSidebarModal){

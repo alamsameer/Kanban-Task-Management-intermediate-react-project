@@ -15,7 +15,6 @@ function SideBar() {
   const { theme, setTheme ,isToggle, setToggle} = useContext(ThemeContext)
   const ParentclassName = "sidebar "+ ` ${isToggle ? "sidebar-toggle" : "up"} `
   const sidebarBoardClass = "sidebar-boards "  + `${theme === "dark" ? "dark" : "light"}`
-  // console.log("state in sidebar", state);
   const togglerSideclass = "theme-toggler " + `${theme === "dark" ? "right" : "left"}`
   const themeChangerClass = "theme-changer theme-changer-" + `${theme === "dark" ? "dark" : "light"}`
   const sidebarcontrol=isToggle?"sidebar-control up":"sidebar-control down"
@@ -36,7 +35,6 @@ function SideBar() {
             {
               state.map((data,i) => {
                 const { title } = data
-                // console.log(title);
                 return <Board key={i} boardIndex={i} title={title} />
               })
             }
@@ -56,11 +54,9 @@ function SideBar() {
           </footer>
         </div>
         <button className={sidebarcontrol} onClick={() => {
-          // console.log("i am clicked toggler");
           setToggle(!isToggle)}}><AiOutlineEye /></button>
         </>
       }
-        {/* insert add board modal here  */}
     </div>
   )
 } 

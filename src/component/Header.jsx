@@ -17,12 +17,6 @@ function Header({ index }) {
   const { theme } = useContext(ThemeContext)
   const {openAddTaskModal,openEditBoard}=useContext(TaskOperationContext)
   const [isSidebarmodal,setSidebarModal]=useState(false)
-  // console.log(activeIndex ==null,state[activeIndex].title,"in header");
-  // const title=activeIndex == null ?null:
-  console.log(activeIndex);
-  // console.log(state[activeIndex]);
-  // const title = state[activeIndex].title
-  
   const headerclass = "header " + `${theme}`
 
   return (
@@ -45,13 +39,16 @@ function Header({ index }) {
         <button className=" btn edit"   onClick={()=>{
           openEditBoard(state[activeIndex])}}><BiMessageSquareEdit/></button>
         <button className=" btn delete"   onClick={()=>{
-          if (state.length>activeIndex){
-            console.log("i am dispatcher");
+          if (state.length-1>0 && state.length-1 >activeIndex){
             dispatch({type:"deleteboard",index:activeIndex})
           }
-          else if(state.length-1<=activeIndex){
-            console.log("i am in lesser",activeIndex-1,activeIndex-1>=0?activeIndex-1:null);
-            setActiveIndex(activeIndex-1>=0?activeIndex-1:null)
+          else if(state.length-1>0 && state.length-1 == activeIndex){
+            dispatch({type:"deleteboard",index:activeIndex})
+            setActiveIndex(activeIndex-1)
+          }
+          else{
+            dispatch({type:"deleteboard",index:activeIndex})
+            setActiveIndex(null)
           }
           }}><AiOutlineDelete/></button>
       </div>

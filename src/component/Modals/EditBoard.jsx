@@ -8,7 +8,6 @@ function EditBoard({board}) {
   const {activeIndex}=useContext(TaskContex)
   const {closeModal}=useContext(TaskOperationContext)
   const [inputs,setInputs]=useState(board)
-  console.log(inputs);
  const {dispatch}=useContext(TaskContex)
   const handleInputs=(event,i=null)=>{
     const name =event.target.name
@@ -21,7 +20,6 @@ function EditBoard({board}) {
         }
         return col
       })
-      console.log(newColumn);
       // newColumn[i].title = value
       setInputs(values=>({...values,columns:newColumn}))
     }
@@ -42,13 +40,11 @@ function EditBoard({board}) {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(inputs);
     dispatch({type:"editboard",index:activeIndex,payload:inputs})
     closeModal()
   }
   const btnClass='btn text-'+theme
   const formClass='form '+theme
-  // console.log(inputs);
   return (
     <form onSubmit={handleSubmit} className={formClass}>
       <h2>Add New Board</h2>

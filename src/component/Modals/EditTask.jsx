@@ -8,7 +8,6 @@ function EditTask({item}) {
   const bodycolumns=state[activeIndex].columns
   const [inputs,setInputs]=useState(item)
   const [subtasks,setSubTask]=useState(item.subtasks)
-  console.log(item);
   const handleInputs=(event)=>{
     const name=event.target.name
     const value=event.target.value
@@ -33,7 +32,6 @@ function EditTask({item}) {
       setInputs(values=>({...values,subtasks}))
       closeModal()
     }
-    // console.log(inputs);
     const formClass='form '+theme
     const btnClass='btn text-'+theme
   return (

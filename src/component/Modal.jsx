@@ -10,11 +10,8 @@ import EditBoard from './Modals/EditBoard'
 //  handle onclick task list - dispatch according to onclick to task list 
 function Modal(props) {
   const{theme}=useContext(ThemeContext)
-  // console.log(props.mode);
   var block=props.isModalOpen ? "block":"none"
-  // console.log(props.isModalOpen,block);
   const modalContentClass="modal-content "+theme
-  console.log(props.mode);
   return (
     <div>
       {

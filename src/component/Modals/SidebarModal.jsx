@@ -23,7 +23,6 @@ function SidebarModal({setSidebarModal}) {
           {
             state.map((data,i) => {
               const { title } = data
-              // console.log(title);
               return <Board key={i} boardIndex={i} title={title} setSidebarModal={setSidebarModal} />
             })
           }

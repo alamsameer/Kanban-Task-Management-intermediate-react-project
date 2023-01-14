@@ -11,30 +11,17 @@ import Modal from './component/Modal'
 const reducer = (state, action) => {
   switch (action.type) {
     case "addboard":
-      console.log(" ihave added one more booard");
-      console.log(action.type, action.payload);
       let newStateb=[...state,action.payload]
       return newStateb
     case "addtask":
       let index = action.index
       let newcolumns = state[index].columns.map((col) => {
         if (col.title === action.payload.status) {
-          // console.log("i am task ",...col.tasks);
           let newTask=[...col.tasks,action.payload]
-            // console.log("i am newtask ",...newTask);
             return {...col,tasks:newTask}
         }
         return col
       })
-      // ***** what cause the array to be added two times *************
-      // console.log(columns);
-      // const newState = [...state]
-      // console.log(newState);
-      // newState[index].columns=newcolumns
-      // console.log( newState[index])
-      // console.log( newState[index].columns);
-      // console.log(newState);
-
       const modifiedState=state.map((board,i)=>{
         if (i==index){
           let newBoard={...board,columns:newcolumns}
@@ -44,23 +31,14 @@ const reducer = (state, action) => {
       })
       return modifiedState
     case "edittask":
-      console.log(" iam editing as task");
-      console.log(...state);
       return state
     case "deletetask":
-      console.log("i hae deleted the task ")
-      console.log(...state);
       let delindex = action.index
       let deletedcolumns = state[delindex].columns.map((col) => {
-        console.log(col.title,action.payload.status,col.title === action.payload.status);
         if (col.title === action.payload.status) {
-          // console.log("i am task ",...col.tasks);
           let newTask=col.tasks.filter((task)=>{
-            console.log(task.title != action.payload.title);
             return task.title != action.payload.title
           })
-
-            console.log("i am newtask ",...newTask);
             return {...col,tasks:newTask}
         }
         return col
@@ -70,7 +48,6 @@ const reducer = (state, action) => {
       return newState
     case "editboard":
       let id=action.index
-      console.log(id,action.payload);
       let State=state.map((board,i)=>{
         if(i === id){
           return action.payload
@@ -92,19 +69,16 @@ const init = () => {
 function App() {
   const [state, dispatch] = useReducer(reducer, null, init)
   const [theme, setTheme] = useState('light');
-  const [activeIndex, setActiveIndex] = useState(null)
+  const [activeIndex, setActiveIndex] = useState(0)
   const [isToggle, setToggle] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [mode, setMode] = useState(null)
   const [taskToEdit, setTaskToEdit] = useState(null)
   const [taskToShow, setTaskToShow] = useState(null)
   const [boardToEdit, setBoardToEdit] = useState(null)
-  console.log("in appjsx",activeIndex);
   let lenState=state.length
-  console.log("in app fo state",lenState);
   //  for adding task to the list 
   function openAddTaskModal() {
-    console.log("i add task clicked");
     setIsModalOpen(true)
     setMode("add")
   }
@@ -135,10 +109,8 @@ function App() {
     setTaskToEdit(null)
   }
   useEffect(()=>{
-    // setActiveIndex(()=>lenState<=0?null:0)
+    // setActiveIndex(0)
   },[])
-  console.log(isModalOpen, mode);
-  console.log(activeIndex != null,"in apr");
   return (
     <TaskOperationContext.Provider value={{ openAddTaskModal, openEditTaskModal, openAddBoardModal, openShowTaskModal,openEditBoard, closeModal }}>
       <TaskTheme.Provider value={{ state, dispatch, setActiveIndex, activeIndex }} >

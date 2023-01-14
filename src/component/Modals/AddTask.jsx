@@ -45,8 +45,6 @@ function Addtask({ closeModal }) {
   // }
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(activeIndex);
-    console.log(inputs);
     dispatch({type:"addtask",index:activeIndex,payload:inputs})
     closeModal()
   }

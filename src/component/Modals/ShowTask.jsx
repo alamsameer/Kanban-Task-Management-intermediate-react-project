@@ -23,7 +23,6 @@ function ShowTask({ item }) {
     setSubTasks(newSubtasks);
   }
   function deleteTask(item){
-    console.log(item);
     dispatch({type:"deletetask", index:activeIndex,payload:item})
     closeModal()
   }
