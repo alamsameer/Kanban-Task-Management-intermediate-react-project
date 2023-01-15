@@ -17,8 +17,9 @@
     /* background-color: #fefefe; */
     margin: auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: none;
     width: 60%;
+    border-radius: 10px;
     position: relative;
     max-width: 450px;
     /* display: flex; */
@@ -33,7 +34,7 @@
     color: #aaaaaa;
     position: absolute;
     top: 5px;
-    right: 5px;
+    right: 15px;
     font-size: 20px;
     margin-left: 10px;
     font-weight: bold;
