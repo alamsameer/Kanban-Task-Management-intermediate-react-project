@@ -147,7 +147,32 @@ The reason that all the items in the columns array are being changed when you up
 
 One way to solve this issue is to create a new object with the updated properties for each item in the columns array, rather than modifying the existing object. You can use the map method to create a new array of objects with the updated properties.
 
-
+### immutability issue inthe object this time
+```js
+col.tasks.push(action.payload);
+ return {..col}
+```
+The issue is that the return {...col} is returning the same reference of the col object, so the new task that is being pushed is still being referenced by the previous state, and that's why the task is added twice.
+### when i reassigned to columns then tha task in it get doubled 
+```js
+ console.log(col);
+      let newshowState = [...state]
+      newshowState[showIndex].columns=col
+```
+When you use the spread operator ... to create a new array, it creates a new array with the same references of the old objects.
+So when you modify the col object, you're also modifying the object that's being referenced by the columns array in the state.
+### solution
+```js
+let newshowState = state.map((state,i) => {
+        if (i !== showIndex) {
+          return state;
+        }
+        return {
+          ...state,
+          columns: col.map((col) => ({ ...col }))
+        };
+      });
+```
 
 ```js
 const newColumns = columns.map((col, i) => {

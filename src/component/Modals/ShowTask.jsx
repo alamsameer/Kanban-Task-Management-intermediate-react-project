@@ -15,7 +15,10 @@ function ShowTask({ item }) {
   const showtaskClass="showtask-container "+theme
   function handlechange(e){
     let value=e.target.value 
+    let newItem={...item,status:value}
+    dispatch({type:"changestatus",index:activeIndex,prevStatus:status,payload:newItem})
     setStatus(value)
+    closeModal()
   }
   function handlesubtask(event,index){
     const newSubtasks = [...subTasks];
