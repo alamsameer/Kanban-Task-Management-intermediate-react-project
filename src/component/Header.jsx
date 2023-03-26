@@ -12,13 +12,15 @@ import SidebarModal from "./Modals/SidebarModal"
 // import Addtask from "./Modals/AddTask"
 import Modal from "./Modal"
 import TaskOperationContext from "../context/TaskOperation"
+import { useSelector } from "react-redux"
 function Header({ index }) {
   const { state, dispatch, activeIndex,setActiveIndex } = useContext(TaskContex)
   const { theme } = useContext(ThemeContext)
   const {openAddTaskModal,openEditBoard}=useContext(TaskOperationContext)
   const [isSidebarmodal,setSidebarModal]=useState(false)
   const headerclass = "header " + `${theme}`
-
+  const rstate=useSelector()
+  console.log(rstate);
   return (
     <div className={headerclass}>
       <header className="header-logo">
