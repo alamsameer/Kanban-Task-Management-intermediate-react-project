@@ -16,7 +16,7 @@ export const EDITTASK='edittask'
 
 // task action creator 
 export const  addtask=(i,task)=>({type:ADDTASK,index:i,payload:task})
-export const edittask=()=>({type:EDITTASK})
+export const edittask=(i,task)=>({type:EDITTASK,index:i,payload:task})
 export const deltask=(i,task)=>({type:DELETETASK,index:i,payload:task})
 
 // status action

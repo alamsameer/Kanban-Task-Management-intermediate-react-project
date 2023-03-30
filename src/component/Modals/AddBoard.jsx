@@ -2,12 +2,14 @@ import { useState, useContext } from 'react'
 import TaskContex from '../../context/Task'
 import TaskOperationContext from '../../context/TaskOperation'
 import ThemeContext from '../../context/Theme'
+import { useAction } from '../../store/useAction'
 // import TaskTheme
 function AddBoard() {
   const { theme } = useContext(ThemeContext)
   const {closeModal}=useContext(TaskOperationContext)
   const [inputs,setInputs]=useState({title:"",columns:new Array(2).fill({tasks:[]})})
  const {dispatch}=useContext(TaskContex)
+ const {addboard} =useAction()
   const handleInputs=(event,i=null)=>{
     const name =event.target.name
     const value=event.target.value
@@ -40,8 +42,8 @@ function AddBoard() {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(inputs);
-    dispatch({type:"addboard",payload:inputs})
+    //  adding boards 
+    addboard(inputs)
     closeModal()
   }
   const btnClass='btn text-'+theme

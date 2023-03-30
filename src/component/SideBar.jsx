@@ -7,10 +7,13 @@ import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
 import {HiOutlineLightBulb} from 'react-icons/hi'
 import {MdOutlineNightlight} from 'react-icons/md'
 import TaskOperationContext from "../context/TaskOperation"
- 
+import { useSelector } from "react-redux"
+  
 function SideBar() {
-  const { activeIndex,state, dispatch } = useContext(TaskContext)
+  // const { activeIndex, dispatch } = useContext(TaskContext)
   const {openAddBoardModal}=useContext(TaskOperationContext)
+  const state=useSelector(state=>state)
+  console.log(state);
   // const [isToggle, setToggle] =  useContext(TaskContext)
   const { theme, setTheme ,isToggle, setToggle} = useContext(ThemeContext)
   const ParentclassName = "sidebar "+ ` ${isToggle ? "sidebar-toggle" : "up"} `

@@ -57,13 +57,11 @@ function App() {
   useEffect(() => {
     // setActiveIndex(0)
   }, [])
-  const state = useSelector(state => state.boards)
-console.log(state);
   return (
     <TaskOperationContext.Provider value={{ openAddTaskModal, openEditTaskModal, openAddBoardModal, openShowTaskModal, openEditBoard, closeModal }}>
     <TaskTheme.Provider value={{  setActiveIndex, activeIndex }} >
       <ThemeContext.Provider value={{ theme, setTheme, isToggle, setToggle }}>
-        {/* <div className="App">
+        <div className="App">
         <nav>
           <Header index={activeIndex} />
         </nav>
@@ -72,7 +70,7 @@ console.log(state);
           <Body />
         </main>
         <Modal isModalOpen={isModalOpen} mode={mode} boardToEdit={boardToEdit} taskToEdit={taskToEdit} closeModal={closeModal} taskToShow={taskToShow} />
-      </div> */}
+      </div>
       </ThemeContext.Provider>
 
     </TaskTheme.Provider>

@@ -10,7 +10,7 @@ function Board(props) {
       setActiveIndex(props.boardIndex)
       if(props.setSidebarModal){
         props.setSidebarModal(false)
-      }
+      } 
     }
     const boardClass='sidebar-board board-'+theme+` ${props.boardIndex==activeIndex?"active"+'-'+theme:""}`
   return (

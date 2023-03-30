@@ -3,20 +3,25 @@ import { useContext, useState } from 'react'
 import TaskContex from '../../context/Task'
 import ThemeContext from '../../context/Theme'
 import TaskOperationContext from '../../context/TaskOperation'
+import { useSelector } from "react-redux"
+import {useAction} from "../../store/useAction"
 
 
 function ShowTask({ item }) {
   const[subTasks,setSubTasks]=useState(item.subtasks)
   const [status,setStatus]=useState(item.status)
-  const { state, activeIndex,dispatch } = useContext(TaskContex)
+  const {  activeIndex,dispatch } = useContext(TaskContex)
   const {openEditTaskModal,closeModal}=useContext(TaskOperationContext)
   const { theme } = useContext(ThemeContext)
+  const state=useSelector(state=>state)
+  const {changestatus,deltask}=useAction()
   const bodycolumns = state[activeIndex].columns
   const showtaskClass="showtask-container "+theme
   function handlechange(e){
     let value=e.target.value 
     let newItem={...item,status:value}
-    dispatch({type:"changestatus",index:activeIndex,prevStatus:status,payload:newItem})
+    // dispatch({type:"changestatus",index:activeIndex,prevStatus:status,payload:newItem})
+    changestatus(activeIndex,status,newItem)
     setStatus(value)
     closeModal()
   }
@@ -26,7 +31,8 @@ function ShowTask({ item }) {
     setSubTasks(newSubtasks);
   }
   function deleteTask(item){
-    dispatch({type:"deletetask", index:activeIndex,payload:item})
+    // dispatch({type:"deletetask", index:activeIndex,payload:item})
+    deltask(activeIndex,item)
     closeModal()
   }
   return (

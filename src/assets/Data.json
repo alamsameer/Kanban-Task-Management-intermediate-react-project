@@ -2,7 +2,7 @@
     "boards": [
         {
             "id": 1,
-            "title": "Platform Launch",
+            "title": "Platform",
             "columns": [
                 {
                     "id": 1,

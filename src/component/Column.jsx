@@ -9,7 +9,7 @@ function Column({ data }) {
     const title = data.title
     const tasks= data.tasks
     const headerclass='column-header '+theme
-    return (
+    return ( 
         <div className='column-container'>
             <header className={headerclass}>{title}</header>
             {

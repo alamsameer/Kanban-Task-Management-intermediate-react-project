@@ -4,12 +4,13 @@ import Column from "./Column"
 import TaskContex from '../context/Task'
 import ThemeContext from '../context/Theme'
 import TaskOperationContext from '../context/TaskOperation'
+import { useSelector } from 'react-redux'
 
 function Body() {
-  const { state, activeIndex } = useContext(TaskContex)
+  const { activeIndex } = useContext(TaskContex)
   const { theme } = useContext(ThemeContext)
   const { openEditBoard } = useContext(TaskOperationContext)
-
+  const state=useSelector(state=>state)
   const bodycolumns = activeIndex !== null ? state[activeIndex].columns : null
 
   const taskbodyclass = 'task-body taskbody-' + theme

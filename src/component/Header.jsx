@@ -13,15 +13,16 @@ import SidebarModal from "./Modals/SidebarModal"
 import Modal from "./Modal"
 import TaskOperationContext from "../context/TaskOperation"
 import { useSelector } from "react-redux"
+import { useAction } from "../store/useAction"
 function Header({ index }) {
-  const { state, dispatch, activeIndex,setActiveIndex } = useContext(TaskContex)
+  const {  dispatch, activeIndex,setActiveIndex } = useContext(TaskContex)
   const { theme } = useContext(ThemeContext)
   const {openAddTaskModal,openEditBoard}=useContext(TaskOperationContext)
   const [isSidebarmodal,setSidebarModal]=useState(false)
   const headerclass = "header " + `${theme}`
-  const rstate=useSelector()
-  console.log(rstate);
-  return (
+  const state=useSelector(state=>state)
+  const {delboard}=useAction()
+  return ( 
     <div className={headerclass}>
       <header className="header-logo">
         <img src={logo} alt="logo" style={{marginRight:"5px"}} />
@@ -42,14 +43,17 @@ function Header({ index }) {
           openEditBoard(state[activeIndex])}}><BiMessageSquareEdit/></button>
         <button className=" btn delete"   onClick={()=>{
           if (state.length-1>0 && state.length-1 >activeIndex){
-            dispatch({type:"deleteboard",index:activeIndex})
+            // dispatch({type:"deleteboard",index:activeIndex})
+            delboard(activeIndex)
           }
           else if(state.length-1>0 && state.length-1 == activeIndex){
-            dispatch({type:"deleteboard",index:activeIndex})
+            // dispatch({type:"deleteboard",index:activeIndex})
+            delboard(activeIndex)
             setActiveIndex(activeIndex-1)
           }
           else{
-            dispatch({type:"deleteboard",index:activeIndex})
+            // dispatch({type:"deleteboard",index:activeIndex})
+            delboard(activeIndex)
             setActiveIndex(null)
           }
           }}><AiOutlineDelete/></button>

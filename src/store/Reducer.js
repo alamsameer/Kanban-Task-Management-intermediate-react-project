@@ -1,6 +1,6 @@
 import data from '../assets/Data.json'
 
-const initialState=data
+const initialState=data.boards
 
 
 export const reducer = (state=initialState, action) => {
@@ -15,7 +15,7 @@ export const reducer = (state=initialState, action) => {
             let newTask = [...col.tasks, action.payload]
             return { ...col, tasks: newTask }
           }
-          return col
+          return col 
         })
         const modifiedState = state.map((board, i) => {
           if (i == index) {
@@ -26,7 +26,28 @@ export const reducer = (state=initialState, action) => {
         })
         return modifiedState
       case "edittask":
-        return state
+        let editIndex = action.index
+        let editedState=state.map((board, i) =>{
+          if(i===editIndex){
+            console.log('editing');
+            let newcolumns=board.columns.map((col)=>{
+              if(col.title===action.payload.status){
+                let newTask=col.tasks.map((task)=>{
+                  if(task.id===action.payload.id){
+                    return action.payload
+                  }
+                  return task
+                })
+                return {...col,tasks:newTask}
+              }
+              return col
+            })
+            return {...board,columns:newcolumns}
+          }
+          return board
+        })
+        console.log(editedState);
+        return editedState
       case "deletetask":
         let delindex = action.index
         let deletedcolumns = state[delindex].columns.map((col) => {
@@ -52,6 +73,7 @@ export const reducer = (state=initialState, action) => {
         return State
       case "deleteboard":
         let ind = action.index
+        console.log(state);
         return state.filter((board, i) => i != ind)
       case "changestatus":
         let showIndex = action.index
